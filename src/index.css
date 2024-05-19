@@ -4,3 +4,7 @@
     font-size: 14px;
     font-weight: bold;
 }
+
+.error{
+    color: red;
+}

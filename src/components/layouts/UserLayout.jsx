@@ -8,7 +8,6 @@ function UserLayout() {
 
     return (
         <div>
-            user Layout
             <Outlet />
         </div>
     )

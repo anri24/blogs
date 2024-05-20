@@ -1,0 +1,30 @@
+.data-title{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.blogs{
+    margin-top: 30px;
+    margin-left: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+    padding: 10px;
+}
+
+.blog{
+    width: 200px;
+    padding: 20px;
+    background-color: rgb(197, 187, 187);
+    text-align: center;
+}
+
+.blog-name{
+    margin-top: 20px;
+}
+
+.blog-desc{
+    margin-top: 20px;
+}

@@ -14,3 +14,13 @@
 .error{
     color: red;
 }
+
+.header-link{
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: sans-serif;
+}

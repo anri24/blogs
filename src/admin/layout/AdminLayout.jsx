@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom"
 import { useStateContext } from "../../contexts/ContextProvider"
-import Header from "../Header";
+import Header from "../components/Header";
 
 function AdminLayout() {
     const {token} = useStateContext();

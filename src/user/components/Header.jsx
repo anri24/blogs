@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import './header.css'
-import axiosClient from "../axios-client"
-import { useStateContext } from "../contexts/ContextProvider"
+import axiosClient from "../../axios-client"
+import { useStateContext } from "../../contexts/ContextProvider"
 
 function Header() {
 
@@ -26,7 +26,6 @@ function Header() {
                     <Link to='/blogs' className="header-link">Blogs</Link>
                     <Link to='/about' className="header-link">About Us</Link>
                     <Link to='/contact' className="header-link">Contact Us</Link>
-                    <button onClick={logout} className="header-link">Logout</button>
                 </div>
             </div>
         </header>

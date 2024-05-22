@@ -1,0 +1,17 @@
+.header{
+    background-color: rgb(79, 79, 143); 
+
+}
+
+.header-div{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0 20px;
+}
+
+.header-links{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}

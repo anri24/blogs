@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react"
-import axiosClient from "../axios-client"
+import axiosClient from "../../axios-client"
 import BlogItem from "../components/BlogItem"
-import './dashboard.css'
 
-
-function Dashboard() {
+function Blogs() {
     const [blogs, setBlogs] = useState([])
     const [loading, setLoading] = useState(false)
 
@@ -14,15 +12,14 @@ function Dashboard() {
 
     const getBlogs = () => {
         setLoading(true)
-        axiosClient.get('/blogs/limited')
+        axiosClient.get('/blogs')
         .then(({data}) => {
             setBlogs(data)
             setLoading(false)
         })
     }
 
-    
-    
+
     return (
         <div>
             <h2 className="data-title">Blogs</h2>
@@ -34,4 +31,4 @@ function Dashboard() {
     )
 }
 
-export default Dashboard
+export default Blogs

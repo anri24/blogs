@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import axiosClient from "../../axios-client"
 import BlogItem from "../components/BlogItem"
 import { Link } from "react-router-dom"
@@ -6,9 +6,11 @@ import { useStateContext } from "../../contexts/ContextProvider"
 
 
 function AdminBlogs() {
-    const {blogs, loading} = useStateContext();
+    const {blogs,getBlogs,loading} = useStateContext();
 
-    console.log(blogs)
+    useEffect(() => {
+        getBlogs() 
+    }, [])
 
     return (
         <div>

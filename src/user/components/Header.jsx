@@ -1,21 +1,7 @@
 import { Link } from "react-router-dom"
 import './header.css'
-import axiosClient from "../../axios-client"
-import { useStateContext } from "../../contexts/ContextProvider"
 
 function Header() {
-
-    const {setUser, setToken} = useStateContext();
-
-
-    function logout(){
-        axiosClient.post('/logout')
-        .then(() => {
-            setUser({});
-            setToken(null)
-        })
-    }
-
     return (
         <header className="header">
             <div className="header-div">

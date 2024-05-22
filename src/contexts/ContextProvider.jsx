@@ -1,4 +1,4 @@
-import {createContext, useContext, useEffect, useState} from "react";
+import {createContext,  useContext, useState} from "react";
 import axiosClient from "../axios-client";
 
 const StateContext = createContext({
@@ -10,6 +10,9 @@ const StateContext = createContext({
     setToken: () => {},
     setBlog: () => {},
     setLoading: () => {},
+    deleteBlog: () => {},
+    getBlogs: () => {},
+    createBlog: () => {},
 });
 
 export const ContextProvider = ({children}) => {
@@ -19,10 +22,17 @@ export const ContextProvider = ({children}) => {
     const [blogs, setBlogs] = useState([])
     const [loading, setLoading] = useState(false)
 
-    useEffect(() => {
-        getBlogs() 
-    }, [loading])
 
+
+    const setToken = (token) => {
+        _setToken(token)
+        if (token) {
+            localStorage.setItem('TOKEN', token);
+        } else {
+            localStorage.removeItem('TOKEN');
+        }
+    }
+    
     const getBlogs = () => {
         setLoading(true)
         axiosClient.get('/blogs')
@@ -32,15 +42,22 @@ export const ContextProvider = ({children}) => {
         })
     }
 
-    
+    const createBlog = (data) => {
+        axiosClient.post('/blog/create',data)
+        .then(() => {
+            
+        }).catch(err => {
+            const response = err.response;
+            console.error(response)
+        })
+    }
 
-    const setToken = (token) => {
-        _setToken(token)
-        if (token) {
-            localStorage.setItem('TOKEN', token);
-        } else {
-            localStorage.removeItem('TOKEN');
-        }
+    function deleteBlog(id) {
+        axiosClient.delete(`/blog/delete/${id}`,{
+            method: 'DELETE',
+        }).then(() => {
+            getBlogs()
+        });
     }
 
     return (
@@ -53,6 +70,9 @@ export const ContextProvider = ({children}) => {
             setToken,
             setBlogs,
             setLoading,
+            deleteBlog,
+            getBlogs,
+            createBlog,
 
         }}>
             {children}

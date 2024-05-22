@@ -6,10 +6,13 @@
     padding: 20px;
     background-color: rgb(197, 187, 187);
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-name{
     margin-top: 20px;
+    word-break: break-all;
 }
 
 .blog-desc{

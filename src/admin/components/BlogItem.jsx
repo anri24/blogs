@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom'
 import './blogItem.css'
 import axiosClient from '../../axios-client'
+import { useStateContext } from '../../contexts/ContextProvider'
 
 
-function deleteBlog(id) {
-    axiosClient.delete(`/blog/delete/${id}`,{
-        method: 'DELETE',
-    });
-}
+
 
 
 function BlogItem({blog}) {
+
+    const {deleteBlog} = useStateContext();
+
+
     return (
             <div className='blog'>
                 <div className='blog-actions'>

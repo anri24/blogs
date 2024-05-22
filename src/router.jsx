@@ -1,15 +1,22 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom'
-import UserLayout from '../components/layouts/UserLayout';
-import GuestLayout from '../components/layouts/GuestLayout';
-import Dashboard from '../views/Dashboard';
-import Blogs from '../views/Blogs';
-import Login from '../views/Login';
-import Register from '../views/Register';
+import GuestLayout from './components/layouts/GuestLayout';
+import Dashboard from './views/Dashboard';
+import Blogs from './views/Blogs';
+import Login from './views/Login';
+import Register from './views/Register';
+import AdminLayout from './components/layouts/AdminLayout';
 
 const router = createBrowserRouter([
     {
+        path: '/admin',
+        element: <AdminLayout />,
+        children: [
+            
+        ]
+    },
+    {
         path: '/',
-        element: <UserLayout />,
+        element: <GuestLayout />,
         children: [
             {
                 path: '/',
@@ -23,12 +30,6 @@ const router = createBrowserRouter([
                 path: '/blogs',
                 element: <Blogs />
             },
-        ]
-    },
-    {
-        path: '/',
-        element: <GuestLayout />,
-        children: [
             {
                 path: '/login',
                 element: <Login />
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register />
             },
+            
         ],
 
     }

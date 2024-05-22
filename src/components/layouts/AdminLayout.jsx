@@ -2,7 +2,7 @@ import { Navigate, Outlet } from "react-router-dom"
 import { useStateContext } from "../../contexts/ContextProvider"
 import Header from "../Header";
 
-function UserLayout() {
+function AdminLayout() {
     const {token} = useStateContext();
 
     if (!token) return <Navigate to='/login' />
@@ -15,4 +15,4 @@ function UserLayout() {
     )
 }
 
-export default UserLayout
+export default AdminLayout

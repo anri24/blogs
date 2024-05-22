@@ -24,7 +24,6 @@ function Header() {
                 </div>
                 <div className="header-links">
                     <Link to='/admin/blogs' className="header-link">Blogs</Link>
-                    <Link to='/admin/create/blog' className="header-link">Create Blog</Link>
                     <button onClick={logout} className="header-link">Logout</button>
                 </div>
             </div>

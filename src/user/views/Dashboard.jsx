@@ -2,24 +2,15 @@ import { useEffect, useState } from "react"
 import axiosClient from "../../axios-client"
 import BlogItem from "../components/BlogItem"
 import './dashboard.css'
+import { useStateContext } from "../../contexts/ContextProvider";
 
 
 function Dashboard() {
-    const [blogs, setBlogs] = useState([])
-    const [loading, setLoading] = useState(false)
+    const {blogs,getBlogs,loading} = useStateContext();
 
     useEffect(() => {
         getBlogs() 
     }, [])
-
-    const getBlogs = () => {
-        setLoading(true)
-        axiosClient.get('/blogs/limited')
-        .then(({data}) => {
-            setBlogs(data)
-            setLoading(false)
-        })
-    }
 
     
     

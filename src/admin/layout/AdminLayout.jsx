@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom"
 import { useStateContext } from "../../contexts/ContextProvider"
-import Header from "../components/Header";
+import AdminHeader from "../components/AdminHeader";
 
 function AdminLayout() {
     const {token} = useStateContext();
@@ -9,7 +9,7 @@ function AdminLayout() {
 
     return (
         <div>
-            <Header />
+            <AdminHeader />
             <Outlet />
         </div>
     )

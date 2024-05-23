@@ -1,13 +1,14 @@
 .blog{
-    max-width: 200px;
-    min-width: 200px;
-    max-height: 300px;
-    min-height: 300px;
-    padding: 20px;
+     max-width: 250px;
+    min-width: 250px;
+    max-height: 450px;
+    min-height: 450px; 
+    padding: 20px; 
     background-color: rgb(197, 187, 187);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+}
+
+.blog-image{
+    margin-top: 20px;
 }
 
 .blog-name{

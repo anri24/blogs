@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import axiosClient from "../../axios-client"
 import { useStateContext } from "../../contexts/ContextProvider"
-import './header.css'
+import './adminHeader.css'
 
-function Header() {
+function AdminHeader() {
 
     const {setUser, setToken} = useStateContext();
 
@@ -22,8 +22,7 @@ function Header() {
                 <div>
                     <Link to='/' className="header-link main-link">Logo</Link>
                 </div>
-                <div className="header-links">
-                    <Link to='/admin/blogs' className="header-link">Blogs</Link>
+                <div className="admin-header-links">
                     <button onClick={logout} className="header-link">Logout</button>
                 </div>
             </div>
@@ -31,4 +30,4 @@ function Header() {
     )
 }
 
-export default Header
+export default AdminHeader

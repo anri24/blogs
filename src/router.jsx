@@ -5,7 +5,7 @@ import AdminDashboard from './admin/views/AdminDashboard';
 import Login from './views/Login';
 import Register from './views/Register';
 import AdminLayout from './admin/layout/AdminLayout';
-import CreateEditBlog from './admin/views/CreateEditBlog';
+import BlogForm from './admin/views/BlogForm';
 
 const router = createBrowserRouter([
     {
@@ -22,11 +22,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/admin/create/blog',
-                element: <CreateEditBlog />
+                element: <BlogForm />
             },
             {
                 path: '/admin/edit/blog/:blogId',
-                element: <CreateEditBlog />
+                element: <BlogForm />
             },
 
         ]

@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom"
 import axiosClient from "../../axios-client";
 import { useStateContext } from "../../contexts/ContextProvider";
-import axios from "axios";
+import './blogForm.css'
 
-function CreateEditBlog() {
+function BlogForm() {
     const {blogId} = useParams();
     const [blog, setBlog] = useState();
 
@@ -67,16 +67,26 @@ function CreateEditBlog() {
         }
         
     return (
-        <div>
-            <form onSubmit={createEditData}>
-            <input ref={nameRef} defaultValue={blog ? blog.name : ''} />
-            <textarea ref={descRef} defaultValue={blog ? blog.description : ''}></textarea>
-            <input  type="file" defaultValue={blog ? blog.image : ''} onChange={(e) => setImage(e.target.files[0])
-            } />
-            <button>Submit</button>
+        <div className="form-div">
+            <form className="blog-form" onSubmit={createEditData}>
+                <div>
+                    <label htmlFor="blog-name">Name</label>
+                    <input id="blog-name" className="input form-input" ref={nameRef} defaultValue={blog ? blog.name : ''} />
+                </div>
+                <div>
+                    <label htmlFor="blog-desc">Description</label>
+                    <textarea id="blog-desc" className="input form-input form-desc" ref={descRef} defaultValue={blog ? blog.description : ''}></textarea>
+                </div>
+                <div>
+                    <label htmlFor="blog-image" className="form-file-label">Image</label>
+                    <input id="blog-image" className="input form-file"  type="file" defaultValue={blog ? blog.image : ''} onChange={(e) => setImage(e.target.files[0])} />
+                </div>
+
+            
+            <button className="btn form-btn">Submit</button>
             </form>
         </div>
     )
 }
 
-export default CreateEditBlog
+export default BlogForm
